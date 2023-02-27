@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>String Comparator</title>
+    <style>
+        body {
+  background-image: url('https://www.hdcarwallpapers.com/walls/nissan_z_2022_4k_4-HD.jpg');
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: inline-block;
+    width: 100px;
+  }
+  
+  input[type="text"] {
+    width: 200px;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
+  #output {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+    </style>
+  </head>
+  <body>
+    <h1>String Comparator</h1>
+    <label for="string1">String 1:</label>
+    <input type="text" id="string1">
+    <br>
+    <label for="string2">String 2:</label>
+    <input type="text" id="string2">
+    <br>
+    <button onclick="compareStrings()">Compare</button>
+    <br>
+    <div id="output"></div>
+    <script>
+        function comp(str1, str2) {
+    return str1.length === str2.length;
+  }
+  
+  function compareStrings() {
+    const str1Input = document.getElementById('string1');
+    const str2Input = document.getElementById('string2');
+    const outputDiv = document.getElementById('output');
+    const str1 = str1Input.value;
+    const str2 = str2Input.value;
+    const isSameLength = comp(str1, str2);
+    outputDiv.innerHTML = isSameLength ? " true " : " false ";
+  }
+  
+    </script>
+  </body>
+</html>

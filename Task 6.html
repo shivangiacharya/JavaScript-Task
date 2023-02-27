@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Football Points Calculator</title>
+    <style>
+        body{
+	background-image:url('https://wallpapers.com/images/featured/mhdoyguhq3skloxt.jpg')
+}
+
+.container {
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 2em;
+	margin-bottom: 20px;
+}
+
+form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+label {
+	display: block;
+	margin: 10px;
+	margin: 63px;
+
+}
+
+input {
+	padding: 10px;
+	margin: 10px;
+}
+
+button {
+	padding: 10px;
+	margin: 10px;
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #3e8e41;
+}
+
+#result {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: black;
+}
+    </style>
+</head>
+<body>
+	<div class="container">
+		<h1>Football Points Calculator</h1>
+		<form>
+			<label for="wins">Wins:</label>
+			<input type="number" id="wins" name="wins" value="0">
+			<label for="draws">Draws:</label>
+			<input type="number" id="draws" name="draws" value="0">
+			<label for="losses">Losses:</label>
+			<input type="number" id="losses" name="losses" value="0">
+			<button type="button" id="calculate-btn">Calculate Points</button>
+		</form>
+		<div id="result"></div>
+	</div>
+    <script>
+        function footballPoints(wins, draws, losses) {
+    return wins * 3 + draws;
+  }
+
+  const calculateBtn = document.getElementById('calculate-btn');
+const resultDiv = document.getElementById('result');
+
+calculateBtn.addEventListener('click', () => {
+  const wins = parseInt(document.getElementById('wins').value);
+  const draws = parseInt(document.getElementById('draws').value);
+  const losses = parseInt(document.getElementById('losses').value);
+  const points = footballPoints(wins, draws, losses);
+  resultDiv.textContent = `Total points: ${points}`;
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+    <style>
+        #minutes-to-seconds-form {
+        font-family: sans-serif;
+        width: 400px;
+        margin: 0 auto;
+        }
+        #minutes-to-seconds-form label {
+        display: block;
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+        }
+        #minutes-to-seconds-form input[type="number"] {
+        font-size: 1.5em;
+        padding: 0.2em;
+        width: 100%;
+        box-sizing: border-box;
+        }
+        #minutes-to-seconds-form button {
+        font-size: 1.5em;
+        padding: 0.2em;
+        margin-top: 1em;
+        width: 100%;
+        background-color: #00aaff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Minutes to Seconds Converter</h1>
+        <form id="minutes-to-seconds-form">
+            <label for="minutes">Enter minutes:</label>
+            <input type="number" id="minutes" name="minutes" />
+            <button type="submit">Convert</button>
+        </form>
+        <div>
+            <p style="font-size: 35px;">Seconds: <span id="seconds-output"></span></p>
+        </div>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+        const minutesToSecondsForm = document.getElementById('minutes-to-seconds-form');
+        const minutesInput = document.getElementById('minutes');
+        const secondsOutput = document.getElementById('seconds-output');
+
+        minutesToSecondsForm.addEventListener('submit', function(e){
+            e.preventDefault();
+            const minutes = minutesInput.value;
+            const seconds = minutes * 60;
+            secondsOutput.innerText = seconds;
+        });
+    });
+        </script>
+</body>
+</html>

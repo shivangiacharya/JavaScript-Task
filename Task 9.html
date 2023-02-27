@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Frame Calculator</title>
+    <style>
+        body {
+  background-image:url('https://learn.canva.com/wp-content/uploads/2020/02/removing-background-images_Unsplash.jpeg') ;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+  
+  label {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    color: aqua;
+    font-size: 16px;
+  }
+  
+  input[type="number"] {
+    width: 100px;
+    align-items: center;
+    color: red;
+  }
+  
+  button {
+    margin-top: 10px;
+    align-content: center;
+    color: green;
+  }
+  
+  #output {
+    margin-top: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: orangered;
+  }
+  
+    </style>
+  </head>
+  <body>
+    <h1>Frame Calculator</h1>
+    <label for="fps">Frames Per Second:</label>
+    <input type="number" id="fps">
+    <br>
+    <label for="minutes">Number of Minutes:</label>
+    <input type="number" id="minutes">
+    <br>
+    <button onclick="calculateFrames()">Calculate</button>
+    <br>
+    <div id="output"></div>
+    <script>
+        function frames(fps, minutes) {
+    return fps * 60 * minutes;
+  }
+  
+  function calculateFrames() {
+    const fpsInput = document.getElementById('fps');
+    const minutesInput = document.getElementById('minutes');
+    const outputDiv = document.getElementById('output');
+    const fps = Number(fpsInput.value);
+    const minutes = Number(minutesInput.value);
+    const numFrames = frames(fps, minutes);
+    outputDiv.innerHTML = `Number of Frames: ${numFrames}`;
+  }
+  
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Value and Type Equality Checker</title>
+    <style>
+        body{
+         
+        padding-bottom: 100px;
+          background-image:url('https://wallpapershome.com/images/wallpapers/waves-3840x2160-4k-hd-wallpaper-android-wallpaper-background-orange-3525.jpg')
+        }
+
+        h1{
+          text-align: center;
+        }
+
+        p{
+          text-align: center;
+        }
+
+        input{
+          padding: auto;
+          margin: 10px;
+          margin-bottom: 100px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Value and Type Equality Checker</h1>
+    <p>Enter two values to check if they are equal:</p>
+    Value: <input type="text" id="inputA">
+    Value: <input type="text" id="inputB">
+    <button onclick="checkEquality()">Check Equality</button>
+    <p id="result"></p>
+    
+    <script>
+      function checkEquality() {
+        let inputA = document.getElementById("inputA").value;
+        let inputB = document.getElementById("inputB").value;
+        let result = areEqual(inputA, inputB);
+        document.getElementById("result").innerHTML = result;
+      }
+      
+      function areEqual(a, b) {
+        return a === b;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Add some styling to make the website look good */
+        .product {
+            display: inline-block;
+            width: 300px;
+            height: 400px;
+            margin: 10px;
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        .product img {
+            width: 100%;
+            height: 300px;
+        }
+
+
+        .wishlist {
+            display: inline-block;
+            width: 500px;
+            height: 350px;
+            margin: 10px;
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: top;
+            overflow-y: scroll;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- Add a container for the products -->
+    <di id="products">
+
+        <div class="product">
+            <img src="https://cdn.dxomark.com/wp-content/uploads/medias/post-125428/Apple-iPhone-14-Pro-Max_FINAL_featured-image-packshot-review-1.jpg" alt="product 1">
+            <p style="font-size: 20px;">IPhone 14 Pro Max</p>
+            <button class="add-to-wishlist" data-product="IPhone 14 Pro Max" style="font-size: 15px;">Add to Wishlist</button>
+        </div>
+        <div class="product">
+            <img src="http://media.4rgos.it/s/Argos/1488391_R_SET?$Main768$&w=620&h=620" alt="product 2">
+            <p style="font-size: 20px;">Galaxy S23 Ultra</p>
+            <button class="add-to-wishlist" data-product="Galaxy S23 Ultra" style="font-size: 15px;">Add to Wishlist</button>
+        </div>
+        <div class="product">
+            <img src="https://www.gizmochina.com/wp-content/uploads/2022/04/Screenshot-2022-04-28-093633-600x600.jpg" alt="product 3">
+            <p style="font-size: 20px;">Vivo X80 Pro</p>
+            <button class="add-to-wishlist" data-product="Vivo X80 Pro" style="font-size: 15px;">Add to Wishlist</button>
+        </div>
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/71o5qKLU+3L._SX679_.jpg" alt="product 4">
+            <p style="font-size: 20px;">OnePlus Nord 2</p>
+            <button class="add-to-wishlist" data-product="OnePlus Nord 2" style="font-size: 15px;">Add to Wishlist</button>
+        </div>
+        <div class="product">
+            <img src="https://i.gadgets360cdn.com/products/large/realme-10-4g-db-709x800-1667995152.jpg" alt="product 5">
+            <p style="font-size: 20px;">RealMe 10 Pro</p>
+            <button class="add-to-wishlist" data-product="RealMe 10 Prot5" style="font-size: 15px;">Add to Wishlist</button>
+        </div>
+        <div class="product">
+            <img src="https://i5.walmartimages.com/asr/153e8f1c-b054-4925-a4ea-b6b0d5bb53a7.05120dc5f50c83e5f0df203f80d8c7ee.jpeg" alt="product 6">
+            <p style="font-size: 20px;">T Shirts</p>
+            <button class="add-to-wishlist" data-product="T Shirts" style="font-size:15px;">Add to Wishlist</button>
+        </div>
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/51sIESqP7qL._UX425_.jpg" alt="product 7">
+            <p style="font-size: 20px;">Jeans</p>
+            <button class="add-to-wishlist" data-product="Jeans" style="font-size: 15px;">Add to Wishlist</button>
+        </div>
+        <div class="product">
+            <img src="https://i.etsystatic.com/31012575/r/il/d91afb/3418288478/il_fullxfull.3418288478_8xv5.jpg" alt="product 8">
+            <p style="font-size: 20px;">Combo</p>
+            <button class="add-to-wishlist" data-product="Combo" style="font-size: 15px;">Add to Wishlist</button>
+        </div>
+        <div class="product">
+            <img src="http://cdn.shopify.com/s/files/1/0484/3932/8922/collections/aaaaa1_1200x630.jpg?v=1652281002" alt="product 9">
+            <p style="font-size: 20px;">Dress</p>
+            <button class="add-to-wishlist" data-product="Dress" style="font-size: 15px;">Add to Wishlist</button>
+        </div>
+        <div class="product">
+            <img src="https://play-lh.googleusercontent.com/UOlOcWRZbWQCZqOIRm80Al1q9wInx9pnj92rI31lp2pa84y9P4rYO3B2I3sMzL8WFk0" alt="product 10">
+            <p style="font-size: 20px;">Wedding Lehenga</p>
+            <button class="add-to-wishlist" data-product="Wedding Lehenga" style="font-size: 15px;">Add to Wishlist</button>
+        </div>
+    </div>
+
+    <!-- Add a container for the wishlist -->
+    <div id="wishlist">
+        <h3>Wishlist</h3>
+        <div class="wishlist">
+            <!-- Add a placeholder for the wishlist items -->
+            <p>YOUR WISHLIST</p>
+        </div>
+    </div>
+
+    <!-- Add the JavaScript to handle adding items to the wishlist -->
+    <script>
+        const addToWishlistButtons = document.querySelectorAll('.add-to-wishlist');
+        const wishlist = document.querySelector('.wishlist');
+
+        for (const button of addToWishlistButtons) {
+            button.addEventListener('click', (event) => {
+                const product = event.target.dataset.product;
+
+                // Create a new item in the wishlist
+                const item = document.createElement('div');
+                item.innerHTML = product;
+
+                // Add the item to the wishlist
+                wishlist.appendChild(item);
+            });
+        }
+    </script>
+</body>
+
+</html>

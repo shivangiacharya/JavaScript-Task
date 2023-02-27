@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <style>
+        body{
+         background-image:url('https://4kwallpapers.com/images/wallpapers/outrun-neon-dark-background-purple-1920x1080-4523.jpg');
+        }
+    
+          #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+    
+          input {
+            margin: 10px;
+            padding: 5px;
+            font-size: 16px;
+            text-align:center;
+          }
+    
+          img{
+            align-items: center;
+            width: 340px;
+            height: auto;
+          }
+    
+          button {
+            margin: 10px;
+            padding: 5px;
+            font-size: 16px;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+          }
+          #result{
+            color: black;
+    
+          }
+        </style>
+</head>
+<body>
+    <div id="container">
+
+      <img src="http://cdn.shopify.com/s/files/1/1355/5443/articles/PuppyDevelopmentStages1_e4a438df42b468772c6396387dbd52e7_2000_1200x1200.jpg?v=1595371874" alt=""width="100%">
+      <input type="text" id="dogs" placeholder="Dogs">
+
+      <img src="https://animalcorner.org/wp-content/uploads/2015/02/cows-1.jpg" alt="">
+      <input type="text" id="cows" placeholder="Cows">
+
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJykNiWCEMhiev7-wr3YPtZACMuVwU0h-Upl1u7QERvpnmFVROs5TAOOSKWg_SfrGnqrs&usqp=CAU" alt="">
+      <input type="text" id="pigs" placeholder="Pigs">
+      <button id="calculate">Calculate</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const calculateBtn = document.querySelector("#calculate");
+      const dogsInput = document.querySelector("#dogs");
+      const cowsInput = document.querySelector("#cows");
+      const pigsInput = document.querySelector("#pigs");
+      const resultDiv = document.querySelector("#result");
+
+      calculateBtn.addEventListener("click", function() {
+        const dogs = Number(dogsInput.value);
+        const cows = Number(cowsInput.value);
+        const pigs = Number(pigsInput.value);
+
+        const totalLegs = dogs * 4 + cows * 4 + pigs * 4;
+        resultDiv.textContent = "Total Legs: " + totalLegs;
+      });
+    </script>
+</body>
+</html>
